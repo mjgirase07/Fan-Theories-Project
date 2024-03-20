@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            overflow-y: auto;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            background-color: #3F51B5;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background-color: #FF9800;
+            color: white;
+            align-self: flex-start;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        #sendButton {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background-color: #3F51B5;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommendation Chatbot</h1>
+    <div class="chat-container" id="chat">
+        <div class="bot-message message">Hello! I'm your movie recommendation chatbot. Start by entering a movie name.</div>
+    </div>
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="Type here...">
+        <button id="sendButton" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        async function getRecommendations(movieName) {
+            const apiKey = 'd997b3f8395563abae78339a3306cbdb';
+            const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieName)}`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (data.results.length > 0) {
+                    const movieId = data.results[0].id;
+                    const recommendationsUrl = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey}`;
+                    const recommendationsResponse = await fetch(recommendationsUrl);
+                    const recommendationsData = await recommendationsResponse.json();
+
+                    const recommendations = recommendationsData.results.slice(0, 4).map(movie => movie.title).join(', ');
+
+                    return recommendations;
+                } else {
+                    return "Sorry, I couldn't find any recommendations for that movie.";
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                return "An error occurred. Please try again later.";
+            }
+        }
+
+        async function sendMessage() {
+            const userInput = document.getElementById("userInput").value;
+            const chatDiv = document.getElementById("chat");
+
+            // Add user message to chat
+            const userMessageElement = document.createElement("div");
+            userMessageElement.textContent = userInput;
+            userMessageElement.classList.add('message', 'user-message');
+            chatDiv.appendChild(userMessageElement);
+
+            // Clear input field
+            document.getElementById("userInput").value = "";
+
+            // Get bot response
+            const botMessage = await getRecommendations(userInput);
+
+            // Add bot message to chat
+            const botMessageElement = document.createElement("div");
+            botMessageElement.textContent = botMessage;
+            botMessageElement.classList.add('message', 'bot-message');
+            chatDiv.appendChild(botMessageElement);
+
+            // Scroll to bottom of chat
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        }
+    </script>
+</body>
+</html>

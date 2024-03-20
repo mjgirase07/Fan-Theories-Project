@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        FanTheories
+    </title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awseome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="/public/homepage.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="nav">
+                <a href="#" class="logo">
+                    <i class='bx bx-movie-play bx-tada main-color'></i>Fan<span class="main-color">Theories</span>
+                </a>
+                <ul class="nav-menu" id="nav-menu" >
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" onclick="returnReviews()">Reviews</a></li>
+                    <li>
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search...">
+                            <i class='bx bx-search'></i>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="/recommendations"><img src="/public/images/chatbot.png"
+                            alt="" style="width: 50px;height: 50px;display: flex;"></a>
+                        
+                    </li>
+                    <li>
+                        <div id="divWithUserId">
+                            <div id="userProfileImageContainer" onclick="redirectToUserProfile()">
+                                <!-- User profile image will be dynamically loaded here -->
+                            </div>
+                        </div>
+                        <div id="divWithoutUserId">
+                            <a href="/loginpage" class="btn btn-hover">
+                                <span>Sign in</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!-- MOBILE MENU TOGGLE -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END NAV -->
+
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <!-- HERO SLIDE -->
+        <div class="hero-slide">
+            <div class="owl-carousel carousel-nav-center" id="hero-carousel">
+                <!-- SLIDE ITEM -->
+                <div class="hero-slide-item">
+                    <img src="/public/images/black-banner.png" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                Black Panther
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>Hollywood Movie</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                "Black Panther" follows T'Challa, played by Chadwick Boseman, who becomes the
+                                Black Panther and king of Wakanda. The film explores the nation's technological marvels,
+                                and T'Challa's leadership is tested when an adversary challenges his rule. Celebrated
+                                for cultural representation, it's a critical and commercial success in the Marvel
+                                Cinematic Universe.
+                            </div>
+                            <div class="item-action top-down delay-6">
+                                <a href="#" class="btn btn-hover">
+                                    <i class="bx bxs-right-arrow"></i>
+                                    <span>Watch Trailer</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END SLIDE ITEM -->
+                <div class="hero-slide-item" onclick="handleMovieClick('navamara24')">
+                    <img src="/public/images/navaram.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                Navara Maza Navasacha 2
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>Marathi Movie</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>UA</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                Navara Maza Navasacha 2 is the second part of the movie Navara Maza Navasacha. People
+                                speculating that it might be the continuation of story from first part.
+                            </div>
+                            <div class="item-action top-down delay-6">
+                                <a href="#" class="btn btn-hover">
+                                    <i class="bx bxs-right-arrow"></i>
+                                    <span>Watch Trailer</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- SLIDE ITEM -->
+                <div class="hero-slide-item">
+                    <img src="/public/images/supergirl-banner.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                Supergirl
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>420 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>Hollywood TV Series</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                "Supergirl" is a TV series following Kara Zor-El, Superman's cousin, as she embraces her
+                                own superhero identity. Balancing ordinary life with extraordinary powers, she battles
+                                villains and navigates personal challenges. The show explores themes of empowerment,
+                                justice, and self-discovery within the DC Universe.
+                            </div>
+                            <div class="item-action top-down delay-6">
+                                <a href="#" class="btn btn-hover">
+                                    <i class="bx bxs-right-arrow"></i>
+                                    <span>Watch Trailer</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END SLIDE ITEM -->
+                <!-- SLIDE ITEM -->
+                <div class="hero-slide-item">
+                    <img src="/public/images/wanda-banner.jpg" alt="">
+                    <div class="overlay"></div>
+                    <div class="hero-slide-item-content">
+                        <div class="item-content-wraper">
+                            <div class="item-content-title top-down">
+                                Wanda Vision
+                            </div>
+                            <div class="movie-infos top-down delay-2">
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>300 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>Hollywood Web Series</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                            <div class="item-content-description top-down delay-4">
+                                "WandaVision" is a unique Marvel series following Wanda Maximoff and Vision in a
+                                sitcom-inspired reality. As they create an idyllic life, strange occurrences unravel,
+                                revealing the mystery behind their existence. The show blends comedy, drama, and mystery
+                                within the Marvel Cinematic Universe.
+                            </div>
+                            <div class="item-action top-down delay-6">
+                                <a href="#" class="btn btn-hover">
+                                    <i class="bx bxs-right-arrow"></i>
+                                    <span>Watch Trailer</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END SLIDE ITEM -->
+            </div>
+        </div>
+        <!-- END HERO SLIDE -->
+
+    </div>
+    <!-- END HERO SECTION -->
+
+    <!-- Latest movies Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                Upcoming movies
+            </div>
+            <div class="movies-slide carousel-nav-center owl-carousel">
+                <!-- MOVIE ITEM -->
+                <div onclick="handleMovieClick('karvholl24')">
+                    <a href="#" id="karvholl24Link" class="movie-item latest-movies">
+                        <img src="/public/images/movies/kravin.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Kravin: The Hunter
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/kalki.jpg" alt="">
+                        <div class="movie-item-content" onclick="handleMovieClick('kalkboll24')">
+                            <div class="movie-item-title">
+                                Kalki 2898 AD
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/transformer.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Transformer
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/bat-man.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Bat-Man
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div onclick="handleMovieClick('jaihtoll25')">
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/Hanu-man.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Jai Hanuman
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/adhira.jpg" alt="">
+                        <div class="movie-item-content" onclick="handleMovieClick('adhitoll25')">
+                            <div class="movie-item-title">
+                                Adhira
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/captain-marvel.png" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Captain Marvel
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/end-game.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Avengers: End Game
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/kgf3.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                K.G.F. 3
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/chawa.jpg" alt="">
+                        <div class="movie-item-content" onclick="handleMovieClick('chhamara24')">
+                            <div class="movie-item-title">
+                                Chaawa
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/love-roise.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Love Roise
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/movies/resident-evil.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Resident Evil
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+
+            </div>
+        </div>
+    </div>
+    <!-- End latest movies section -->
+
+
+    <!-- Latest Cartoon Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                Upcoming Series and Tv Shows
+            </div>
+            <div class="movies-slide carousel-nav-center owl-carousel">
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/series/mandalorian.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Mandalorian
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/series/penthouses.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Penthouses
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/series/star-trek.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Star Treck
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/series/stranger-thing.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Stranger Things
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/series/supergirl.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Supergirl
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/series/the-falcon.webp" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                The Falcon
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/series/wanda.png" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Wanda Vision
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End latest movies section -->
+
+    <!-- Latest Series Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                Upcoming Anime
+            </div>
+            <div class="movies-slide carousel-nav-center owl-carousel">
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/cartoons/coco.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Coco
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/cartoons/croods.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                The Croods
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/cartoons/demon-slayer.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Demon Slayer
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/cartoons/dragon.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Dragon Ball Z
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/cartoons/over-the-moon.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Over The Moon
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/cartoons/weathering.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Weathering with you
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/cartoons/your-name.jpg" alt="">
+                        <div class="movie-item-content">
+                            <div class="movie-item-title">
+                                Your Name
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>120 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>HD</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <button class="trailer-btn"><i
+                            class="fa-solid fa-circle-play fa-xl"></i><span>Trailer</span></button>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End latest movies section -->
+    
+    
+    <div class="cta-text">
+        <h1>"Dive into the fan theories and uncover the untold mysteries"</h1>
+    </div>
+    <footer id="footer-container">
+        <div id="left-footer">
+            <h2>Why to choose us ?</h2>
+            <p>"Choose us for a fan theory haven, where imagination thrives, community bonds, and stories come alive
+                through endless exploration."
+            </p>
+        </div>
+        <div id="mid-footer">
+            <h2>Quick Links</h2>
+            <div><a href="">Home</a></div>
+            <div><a href="">Reviews</a></div>
+            <div><a href="">User</a></div>
+        </div>
+        <div id="right-footer">
+            <h2>Contact</h2>
+            <div><i class="fa-solid fa-phone" style="color: #ffffff;"></i> +91 99999 99999</div>
+            <div><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i>fantheories&co</div>
+            <div><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>fantheories_co</div>
+        </div>
+    </footer>
+    <!-- SCRIPT -->
+    <script>
+
+
+    </script>
+    <script>
+
+        // Fetch data from the server
+        const user_id = getUserIdFromUrl();
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the current URL
+            const currentURL = window.location.href;
+
+            // Get the div elements
+            const divWithUserId = document.getElementById('divWithUserId');
+            const divWithoutUserId = document.getElementById('divWithoutUserId');
+
+            // Show/hide divs based on the condition
+            if (user_id) {
+                divWithUserId.style.display = 'block';
+                divWithoutUserId.style.display = 'none';
+            } else {
+                divWithUserId.style.display = 'none';
+                divWithoutUserId.style.display = 'block';
+            }
+        });
+        fetch(`/profile/${user_id}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update the image source based on the received data
+                const userProfileImageContainer = document.getElementById('userProfileImageContainer');
+                const img = document.createElement('img');
+                img.src = data.photo_url || 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png'; // Use a default image if photo_url is not available
+                img.alt = 'User Profile Image';
+                img.style.width = '50px';
+                img.style.height = '50px';
+                img.style.border = '2px solid white';
+                img.style.borderRadius = '50%';
+
+                // Append the image to the container
+                userProfileImageContainer.appendChild(img);
+            })
+            .catch(error => console.error('Error fetching user profile data:', error));
+
+        // Function to handle movie click
+        function handleMovieClick(movie_id) {
+            const user_id = getUserIdFromUrl(); // Assuming you have defined getUserIdFromUrl function
+
+            if (user_id) {
+                const url = `/fantheories/${movie_id}/${user_id}`;
+                console.log('Constructed URL:', url);
+
+                // You can redirect to the constructed URL if needed
+                window.location.href = url;
+            } else {
+                const url = `/fantheories/${movie_id}/1`;
+                console.log('Constructed URL:', url);
+                window.location.href = url;
+            }
+        }
+
+        // Function to extract user_id from the URL
+        function getUserIdFromUrl() {
+            const pathArray = window.location.pathname.split('/');
+            const user_idIndex = pathArray.indexOf('homepage') + 1;
+
+            if (user_idIndex < pathArray.length) {
+                return pathArray[user_idIndex];
+            } else {
+                return null; // user_id not found
+            }
+        }
+        function returnReviews() {
+            if (user_id) {
+                // Redirect to homepage.html with user ID
+                window.location.href = `/moviereviews/${user_id}`;
+            } else {
+                // Redirect to homepage.html without user ID
+                window.location.href = '/moviereviews/1';
+            }
+        }
+        // Function to redirect to userprofile.html with user_id
+        function redirectToUserProfile() {
+            if (user_id) {
+                const url = `/userprofile/${user_id}`;
+                console.log('Redirecting to UserProfile:', url);
+                window.location.href = url;
+            }
+        }
+    </script>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- OWL CAROUSEL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+    <!-- APP SCRIPT -->
+    <script>
+        $(document).ready(() => {
+            $('#hamburger-menu').click(() => {
+                $('#hamburger-menu').toggleClass('active')
+                $('#nav-menu').toggleClass('active')
+            })
+
+            // setting owl carousel
+
+            let navText = ["<i class='bx bx-chevron-left'></i>", "<i class='bx bx-chevron-right'></i>"]
+
+            $('#hero-carousel').owlCarousel({
+                items: 1,
+                dots: false,
+                loop: true,
+                nav: true,
+                navText: navText,
+                autoplay: true,
+                autoplayHoverPause: true
+            })
+
+            $('#top-movies-slide').owlCarousel({
+                items: 2,
+                dots: false,
+                loop: true,
+                autoplay: true,
+                autoplayHoverPause: true,
+                responsive: {
+                    500: {
+                        items: 3
+                    },
+                    1280: {
+                        items: 4
+                    },
+                    1600: {
+                        items: 6
+                    }
+                }
+            })
+
+            $('.movies-slide').owlCarousel({
+                items: 2,
+                dots: false,
+                loop: true,
+                autoplay: true,
+                nav: true,
+                navText: navText,
+                margin: 20,
+                responsive: {
+                    500: {
+                        items: 2
+                    },
+                    1280: {
+                        items: 4
+                    },
+                    1600: {
+                        items: 6
+                    }
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>

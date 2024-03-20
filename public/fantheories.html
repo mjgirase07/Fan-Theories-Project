@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Theories Page</title>
+    <link rel="stylesheet" href="/public/fantheories.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awseome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- NAV -->
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="nav">
+                <a href="#" class="logo">
+                    <i class='bx bx-movie-play bx-tada main-color'></i>Fan<span class="main-color">Theories</span>
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#" onclick="returnHome()">Home</a></li>
+                    <li><a href="#" onclick="returnReviews()">Reviews</a></li>
+                    <li>
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search...">
+                            <i class='bx bx-search'></i>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="/recommendations"><img src="/public/images/chatbot.png"
+                            alt="" style="width: 50px;height: 50px;display: flex;"></a>
+                        
+                    </li>
+                    <li>
+                        <div id="divWithUserId">
+                            <div id="userProfileImageContainer" onclick="redirectToUserProfile()">
+                                <!-- User profile image will be dynamically loaded here -->
+                            </div>
+                        </div>
+                        <div id="divWithoutUserId">
+                            <a href="/loginpage" class="btn btn-hover">
+                                <span>Sign in</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!-- MOBILE MENU TOGGLE -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- END NAV -->
+    <div class="titlecontainer">
+        <div class="block"></div>
+        <h2 class="title">Hype of Movie</h2>
+    </div>
+    <div id="sentimentAnalysisResults" style="text-align: center; margin-top: 20px;">
+    <div class="bar-container">
+        <p>Positive: <span id="positiveScore">0</span></p>
+        <div class="bar-wrapper">
+            <div class="bar" id="positiveBar"></div>
+        </div>
+    </div>
+    <div class="bar-container">
+        <p>Neutral: <span id="neutralScore">0</span></p>
+        <div class="bar-wrapper">
+            <div class="bar" id="neutralBar"></div>
+        </div>
+    </div>
+    <div class="bar-container">
+        <p>Negative: <span id="negativeScore">0</span></p>
+        <div class="bar-wrapper">
+            <div class="bar" id="negativeBar"></div>
+        </div>
+    </div>
+</div>
+
+    <div id="mainContent">
+        <div class="titlecontainer">
+            <div class="block"></div>
+            <h2 class="title">Movie information</h2>
+        </div>
+        <div id="movieInfo">
+            <!-- Movie information will be dynamically added here -->
+        </div>
+
+        <div class="title-tweet">
+            <div class="titlecontainer">
+                <div class="block"></div>
+                <h2 class="title">Dive into the ocean of fan theories</h2>
+            </div>
+            <!-- Display Tweets -->
+            <div id="tweetRegion">
+                
+                <!-- Tweets will be dynamically added here -->   
+            </div>
+        </div>
+        
+
+        <!-- User Input for Tweets -->
+        <div class="titlecontainer">
+            <div class="block"></div>
+            <h2 class="title">Contribute to the Ocean</h2>
+        </div>
+        <div class="inputcontainer">
+            <div class="tweetinput">
+                <textarea id="userTweet" placeholder="Enter your tweet"></textarea>
+                <i class="fa-solid fa-paper-plane" onclick="submitTweet()" style="color: #ffffff; font-size: 25px;"></i>
+            </div>
+            
+        </div>
+    </div>
+    <footer id="footer-container">
+        <div id="left-footer">
+            <h2>Why to choose us ?</h2>
+            <p>"Choose us for a fan theory haven, where imagination thrives, community bonds, and stories come alive through endless exploration."
+            </p>
+        </div>
+        <div id="mid-footer">
+            <h2>Quick Links</h2>
+            <div><a href="">Home</a></div>
+            <div><a href="">Reviews</a></div>
+            <div><a href="">User</a></div>
+        </div>
+        <div id="right-footer">
+            <h2>Contact</h2>
+            <div><i class="fa-solid fa-phone" style="color: #ffffff;"></i> +91 99999 99999</div>
+            <div><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i>fantheories&co</div>
+            <div><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>fantheories_co</div>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = function () {
+            const pathArray = window.location.pathname.split('/');
+            const movieId = pathArray[2]; // Extract movie_id
+            const userId = pathArray[3];  // Extract user_id
+            fetch(`/getMovieInfo/${movieId}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Movie Info:', data);  // Log movie info
+                    updateMovieInfo(data);
+                })
+                .catch(error => console.error('Error fetching movie info:', error));
+
+            fetch(`/getTweets/${movieId}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Tweets Data:', data);  // Log tweets data
+                    updateTweets(data.tweets);
+                })
+                .catch(error => console.error('Error fetching tweets:', error));
+
+            // Fetch sentiment analysis results from the server
+            fetch(`/sentiment-analysis/${movieId}`)
+            .then(response => response.json())
+            .then(data => {
+                const positiveScore = data.sentimentScores.positive;
+                const neutralScore = data.sentimentScores.neutral;
+                const negativeScore = data.sentimentScores.negative;
+
+                const total = positiveScore + neutralScore + negativeScore;
+
+                const positivePercentage = (positiveScore / total) * 100;
+                const neutralPercentage = (neutralScore / total) * 100;
+                const negativePercentage = (negativeScore / total) * 100;
+
+                document.getElementById('positiveScore').innerText = `${positiveScore} (${positivePercentage.toFixed(2)}%)`;
+                document.getElementById('neutralScore').innerText = `${neutralScore} (${neutralPercentage.toFixed(2)}%)`;
+                document.getElementById('negativeScore').innerText = `${negativeScore} (${negativePercentage.toFixed(2)}%)`;
+
+                document.getElementById('positiveBar').style.width = `${positivePercentage}%`;
+                document.getElementById('neutralBar').style.width = `${neutralPercentage}%`;
+                document.getElementById('negativeBar').style.width = `${negativePercentage}%`;
+            })
+            .catch(error => console.error('Error fetching sentiment analysis results:', error));
+
+        };
+
+        // function updateTweets(tweets) {
+        //     const tweetRegion = document.getElementById('tweetRegion');
+        //     tweetRegion.innerHTML = ''; // Clear existing tweets
+
+        //     tweets.forEach(tweet => {
+        //         const tweetContainer = document.createElement('div');
+        //         tweetContainer.classList.add('tweet-container');
+
+        //         // User profile information
+        //         const userProfile = document.createElement('div');
+        //         userProfile.classList.add('user-profile');
+        //         userProfile.innerHTML = `
+        //             <img src="${tweet.user.photo_url}" alt="User Photo">
+        //             <span>${tweet.user.user_name}</span>
+                
+        // `;
+        //         tweetContainer.appendChild(userProfile);
+
+        //         // Tweet content
+        //         const tweetContent = document.createElement('div');
+        //         tweetContent.textContent = tweet.theory;
+        //         tweetContainer.appendChild(tweetContent);
+
+        //         // Display the tweet container
+        //         tweetRegion.appendChild(tweetContainer);
+        //     });
+        // }
+        function updateTweets(tweets) {
+    const tweetRegion = document.getElementById('tweetRegion');
+    tweetRegion.innerHTML = ''; // Clear existing tweets
+
+    tweets.forEach(tweet => {
+        const tweetContainer = document.createElement('div');
+        tweetContainer.classList.add('tweet-container');
+
+        // User profile information
+        const userProfile = document.createElement('div');
+        userProfile.classList.add('user-profile');
+        userProfile.innerHTML = `
+            <img src="${tweet.user.photo_url}" alt="User Photo">
+            <span>${tweet.user.user_name}</span>
+        `;
+        tweetContainer.appendChild(userProfile);
+
+        // Tweet content
+        const tweetContent = document.createElement('div');
+        tweetContent.textContent = tweet.theory;
+        tweetContainer.appendChild(tweetContent);
+
+        // Initialize likes if not present
+        if (typeof tweet.likes !== 'number') {
+            tweet.likes = 0;
+        }
+
+        // Icons container
+        const iconsContainer = document.createElement('div');
+        iconsContainer.classList.add('icons-container');
+
+        // Like icon
+        const likeIcon = document.createElement('span');
+        likeIcon.classList.add('like-icon');
+        likeIcon.innerHTML = '<i class="fas fa-heart"></i>';
+        iconsContainer.appendChild(likeIcon);
+
+        // Like count
+        const likeCount = document.createElement('span');
+        likeCount.classList.add('like-count');
+        likeCount.textContent = tweet.likes;
+        iconsContainer.appendChild(likeCount);
+
+        let liked = false;
+
+        // Toggle like count and icon color when clicked
+        likeIcon.addEventListener('click', () => {
+            if (liked) {
+                tweet.likes--;
+                likeCount.textContent = tweet.likes;
+                likeIcon.style.color = '#000'; // Change color back to black
+            } else {
+                tweet.likes++;
+                likeCount.textContent = tweet.likes;
+                likeIcon.style.color = 'pink'; // Change color to pink
+            }
+            liked = !liked; // Toggle liked state
+        });
+
+        // Share icon
+        const shareIcon = document.createElement('span');
+        shareIcon.classList.add('share-icon');
+        shareIcon.innerHTML = '<i class="fas fa-share"></i>';
+        iconsContainer.appendChild(shareIcon);
+
+        // Comment icon
+        const commentIcon = document.createElement('span');
+        commentIcon.classList.add('comment-icon');
+        commentIcon.innerHTML = '<i class="fas fa-comment"></i>';
+        iconsContainer.appendChild(commentIcon);
+
+        // Append icons container to tweet container
+        tweetContainer.appendChild(iconsContainer);
+
+        // Display the tweet container
+        tweetRegion.appendChild(tweetContainer);
+    });
+}
+
+
+
+
+        function submitTweet() {
+            const userTweet = document.getElementById('userTweet').value;
+            const pathArray = window.location.pathname.split('/');
+            const movieId = pathArray[2]; // Extract movie_id
+            const userId = pathArray[3];  // Extract user_id
+
+            // Check if user_id is  equal to 1
+            if (userId === '1') {
+                alert('You are not authorized to submit tweets. Please log in.');
+                // Redirect to login page
+                window.location.href = '/loginpage.html';
+                return; // Stop further execution
+            }
+
+            fetch('/submitTweet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ tweet: userTweet, movie_id: movieId, user_id: userId }),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Response from server:', data);  // Log the response from the server
+                    // Update the tweet region with the new tweet
+                    updateTweetRegion();
+
+                    // Clear the content of the text box
+                    document.getElementById('userTweet').value = '';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
+                
+        } 
+
+
+
+        function updateMovieInfo(movieInfo) {
+            const movieInfoDiv = document.getElementById('movieInfo');
+            const movieInfoHTML = `
+            <!-- This is container to hold movie info -->
+            <div class="container">
+
+                <div class="leftcontainer">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/${movieInfo.yt_link}" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="rightcontainer">
+                    <h1>${movieInfo.movie_name}</h2>
+                    <p>Release Date: ${movieInfo.release_date}</p>
+                    <p>Director: ${movieInfo.director_name}</p>
+                    <p>Main Cast: ${movieInfo.main_cast}</p>
+                    <p>Description: ${movieInfo.movie_description}</p>
+                </div>
+
+            </div>
+               
+        `;
+            movieInfoDiv.innerHTML = movieInfoHTML;
+        }
+
+
+
+        function updateTweetRegion() {
+            const pathArray = window.location.pathname.split('/');
+            const movieId = pathArray[2];
+
+            fetch(`/getTweets/${movieId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const tweetRegion = document.getElementById('tweetRegion');
+                    tweetRegion.innerHTML = ''; // Clear existing tweets
+
+                    data.tweets.forEach(tweet => {
+                        const tweetContainer = document.createElement('div');
+                        tweetContainer.classList.add('tweet-container');
+
+                        // User profile information
+                        const userProfile = document.createElement('div');
+                        userProfile.classList.add('user-profile');
+                        userProfile.innerHTML = `
+                                <img src="${tweet.user.photo_url}" alt="User Photo">
+                                <span>${tweet.user.user_name}</span>
+                            
+                        `;
+                        tweetContainer.appendChild(userProfile);
+
+                        // Tweet content
+                        const tweetContent = document.createElement('div');
+                        tweetContent.textContent = tweet.theory;
+                        tweetContainer.appendChild(tweetContent);
+
+                        // Display the tweet container
+                        tweetRegion.appendChild(tweetContainer);
+                    });
+                })
+                .catch(error => console.error('Error fetching tweets:', error));
+        }
+
+    </script>
+    <script>
+        // Fetch data from the server
+        const pathArray = window.location.pathname.split('/');
+        const user_id = pathArray[3]; 
+        function returnHome() {
+            if (user_id) {
+                // Redirect to homepage.html with user ID
+                window.location.href = `/homepage/${user_id}`;
+            } else {
+                // Redirect to homepage.html without user ID
+                window.location.href = '/';
+            }
+        }
+        function returnReviews() {
+            if (user_id) {
+                // Redirect to homepage.html with user ID
+                window.location.href = `/moviereviews/${user_id}`;
+            } else {
+                // Redirect to homepage.html without user ID
+                window.location.href = '/moviereviews/1';
+            }
+        }
+        // Function to redirect to userprofile.html with user_id
+        function redirectToUserProfile() {
+            if (user_id) {
+                const url = `/userprofile/${user_id}`;
+                console.log('Redirecting to UserProfile:', url);
+                window.location.href = url;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the current URL
+            const currentURL = window.location.href;
+
+            // Get the div elements
+            const divWithUserId = document.getElementById('divWithUserId');
+            const divWithoutUserId = document.getElementById('divWithoutUserId');
+
+            // Show/hide divs based on the condition
+            if (user_id != 1) {
+                divWithUserId.style.display = 'block';
+                divWithoutUserId.style.display = 'none';
+            } else {
+                divWithUserId.style.display = 'none';
+                divWithoutUserId.style.display = 'block';
+            }
+        });
+        fetch(`/profile/${user_id}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update the image source based on the received data
+                const userProfileImageContainer = document.getElementById('userProfileImageContainer');
+                const img = document.createElement('img');
+                img.src = data.photo_url || 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png'; // Use a default image if photo_url is not available
+                img.alt = 'User Profile Image';
+                img.style.width = '50px';
+                img.style.height = '50px';
+                img.style.border='2px solid white';
+                img.style.borderRadius='50%';
+
+                // Append the image to the container
+                userProfileImageContainer.appendChild(img);
+            })
+            .catch(error => console.error('Error fetching user profile data:', error));
+    </script>
+</body>
+
+</html>

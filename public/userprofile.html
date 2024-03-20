@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/public/userprofile.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awseome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- NAV -->
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="nav">
+                <a href="#" class="logo">
+                    <i class='bx bx-movie-play bx-tada main-color'></i>Fan<span class="main-color">Theories</span>
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li>
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search...">
+                            <i class='bx bx-search'></i>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="/recommendations"><img src="/public/images/chatbot.png"
+                            alt="" style="width: 50px;height: 50px;display: flex;"></a>
+                        
+                    </li>
+                    <li>
+                        <div id="divWithUserId">
+                            <div id="userProfileImage" onclick="redirectToUserProfile()">
+                                <!-- User profile image will be dynamically loaded here -->
+                            </div>
+                        </div>
+                        <div id="divWithoutUserId">
+                            <a href="/loginpage" class="btn btn-hover">
+                                <span>Sign in</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!-- MOBILE MENU TOGGLE -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END NAV -->
+    <div class="titlecontainer">
+        <div class="block"></div>
+        <h2 class="title">User Profile</h2>
+    </div>
+    <div class="user-profile-container" style="color: black; font-size: 1.2rem; font-weight: bold;display: flex;padding: 20px;">
+        <div class="left-profile">
+            
+            <div id="userProfileImageContainer">
+                <!-- User profile image will be dynamically loaded here -->
+            </div>
+            <div id="userInfoContainer">
+                <div><span id="userName"></span></div>
+                <div style="font-size: 0.8rem;color:rgb(54, 54, 54)">#<span id="userId"></span></div>
+                <div>Bio: <span id="userBio"></span></div>
+            </div>
+        </div>
+        <!-- <div class="right-profile">
+            <div class="fav-movies-container">
+                <div class="fav-movie" ><img src="/public/images/movies/bat-man.jpg" alt="BATMAN" style="width: 180px;height: 270px;border:1px solid white;"></div>
+                <div class="fav-movie" ><img src="/public/images/series/supergirl.jpg" alt="" style="width: 180px;height: 270px;border:1px solid white;"></div>
+                <div class="fav-movie" ><img src="/public/images/cartoons/dragon.jpg" alt="" style="width: 180px;height: 270px;border:1px solid white;"></div>
+            </div>
+                 
+        </div> -->
+    </div>
+    
+
+    <!-- Tweets Section -->
+    <div class="title-tweet">
+        <div class="titlecontainer">
+            <div class="block"></div>
+            <h2 class="title">Your Contributions</h2>
+        </div>
+        <!-- Display Tweets -->
+        <div id="tweetRegion">
+            
+            <!-- Tweets will be dynamically added here -->   
+        </div>
+    </div>
+
+    <footer id="footer-container">
+        <div id="left-footer">
+            <h2>Why to choose us ?</h2>
+            <p>"Choose us for a fan theory haven, where imagination thrives, community bonds, and stories come alive through endless exploration."
+            </p>
+        </div>
+        <div id="mid-footer">
+            <h2>Quick Links</h2>
+            <div><a href="">Home</a></div>
+            <div><a href="">Reviews</a></div>
+            <div><a href="">User</a></div>
+        </div>
+        <div id="right-footer">
+            <h2>Contact</h2>
+            <div><i class="fa-solid fa-phone" style="color: #ffffff;"></i> +91 99999 99999</div>
+            <div><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i>fantheories&co</div>
+            <div><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>fantheories_co</div>
+        </div>
+    </footer>
+
+    <script>
+        // Fetch user profile data from the server
+        const user_id = getUserIdFromUrl();
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the current URL
+            const currentURL = window.location.href;
+
+            // Get the div elements
+            const divWithUserId = document.getElementById('divWithUserId');
+            const divWithoutUserId = document.getElementById('divWithoutUserId');
+
+            // Show/hide divs based on the condition
+            if (user_id) {
+                divWithUserId.style.display = 'block';
+                divWithoutUserId.style.display = 'none';
+            } else {
+                divWithUserId.style.display = 'none';
+                divWithoutUserId.style.display = 'block';
+            }
+        });
+        fetch(`/profile/${user_id}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update the image source based on the received data
+                const userProfileImage = document.getElementById('userProfileImage');
+                const img = document.createElement('img');
+                img.src = data.photo_url || 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png'; // Use a default image if photo_url is not available
+                img.alt = 'User Profile Image';
+                img.style.width = '50px';
+                img.style.height = '50px';
+                img.style.border='1px solid white';
+                img.style.borderRadius='50%'
+
+                // Append the image to the container
+                userProfileImage.appendChild(img);
+            })
+            .catch(error => console.error('Error fetching user profile data:', error));
+        fetch(`/profile/${user_id}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    console.error('Error fetching user profile:', data.error);
+                } else {
+                    // Update the user profile information
+                    updateProfileInfo(data);
+                    // Fetch and display tweets for the user
+                    fetchAndDisplayTweets(user_id);
+                }
+            })
+            .catch(error => console.error('Error fetching user profile data:', error));
+
+        function updateProfileInfo(data) {
+            // Update user information
+            document.getElementById('userId').innerText = data.user_id || 'N/A';
+            document.getElementById('userName').innerText = data.user_name || 'N/A';
+            document.getElementById('userBio').innerText = data.user_bio || 'N/A';
+
+            // Update the image source based on the received data
+            const userProfileImageContainer = document.getElementById('userProfileImageContainer');
+            const img = document.createElement('img');
+            img.src = data.photo_url || 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png'; // Use a default image if photo_url is not available
+            img.alt = 'User Profile Image';
+            img.style.width = '150px';
+            img.style.height = '150px';
+            img.style.border='2px solid black';
+            img.style.borderRadius='50%';
+            
+
+            // Append the image to the container
+            userProfileImageContainer.appendChild(img);
+        }
+
+        function fetchAndDisplayTweets(user_id) {
+            // Fetch tweets for the user
+            fetch(`/getTweetsByUser/${user_id}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        console.error('Error fetching tweets:', data.error);
+                    } else {
+                        // Update the tweets section
+                        updateTweets(data.tweets);
+                    }
+                })
+                .catch(error => console.error('Error fetching tweets:', error));
+        }
+
+        function updateTweets(tweets) {
+            const tweetRegion = document.getElementById('tweetRegion');
+            tweetRegion.innerHTML = ''; // Clear existing tweets
+
+            tweets.forEach(tweet => {
+                const tweetContainer = document.createElement('div');
+                tweetContainer.classList.add('tweet-container');
+
+                // User profile information
+                const userProfile = document.createElement('div');
+                userProfile.classList.add('user-profile');
+                userProfile.innerHTML = `
+                    <img src="${tweet.user.photo_url}" alt="User Photo">
+                    <span>${tweet.user.user_name}</span>
+                `;
+                tweetContainer.appendChild(userProfile);
+
+                // Tweet content
+                const tweetContent = document.createElement('div');
+                tweetContent.textContent = tweet.theory;
+                tweetContainer.appendChild(tweetContent);
+
+                // Display the tweet container
+                tweetRegion.appendChild(tweetContainer);
+            });
+        }
+
+        // Function to extract user_id from the URL
+        function getUserIdFromUrl() {
+            const pathArray = window.location.pathname.split('/');
+            const user_idIndex = pathArray.indexOf('userprofile') + 1;
+
+            if (user_idIndex < pathArray.length) {
+                return pathArray[user_idIndex];
+            } else {
+                return null; // user_id not found
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

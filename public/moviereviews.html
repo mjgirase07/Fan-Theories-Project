@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        FanTheories
+    </title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <!-- OWL CAROUSEL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awseome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="/public/moviereviews.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="nav">
+                <a href="#" class="logo">
+                    <i class='bx bx-movie-play bx-tada main-color'></i>Fan<span class="main-color">Theories</span>
+                </a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#" onclick="returnHome()">Home</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li>
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search...">
+                            <i class='bx bx-search'></i>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="/recommendations"><img src="/public/images/chatbot.png"
+                            alt="" style="width: 50px;height: 50px;display: flex;"></a>
+                        
+                    </li>
+                    <li>
+                        <div id="divWithUserId">
+                            <div id="userProfileImageContainer" onclick="redirectToUserProfile()">
+                                <!-- User profile image will be dynamically loaded here -->
+                            </div>
+                        </div>
+                        <div id="divWithoutUserId">
+                            <a href="/loginpage" class="btn btn-hover">
+                                <span>Sign in</span>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <!-- MOBILE MENU TOGGLE -->
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END NAV -->
+
+
+    <div class="cta-text">
+        <h1>"Decide here, which movie to Watch !!"</h1>
+    </div>
+    <!-- Latest movies Section -->
+    <div class="section-movies">
+        <div class="container">
+            <div class="section-header">
+                Movies
+            </div>
+            <div class="movies-slide carousel-nav-center owl-carousel">
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div href="#" class="movie-item latest-movies">
+                        <img src="/public/images/reviews/ironman1.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="ironholl08">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Iron Man 1
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>126 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div href="#" class="movie-item latest-movies">
+                        <img src="/public/images/reviews/hanu-man.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="hanutoll24">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Hanu-Man
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>158 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div href="#" class="movie-item latest-movies">
+                        <img src="/public/images/reviews/adipurush.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="adipboll23">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Adipurush
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>3.2</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>179 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div href="#" class="movie-item latest-movies">
+                        <img src="/public/images/reviews/superman.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="manoholl13">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Man of Steel
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.1</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>143 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/captain-america.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="captholl90">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Captain America
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>6.9</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>124 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/salaar.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="salatoll23">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Salaar
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>6.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>175 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/conjuring.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="conjholl13">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Conjuring
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>112 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>R</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/justice.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="justanim17">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Justice Laegue
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.9</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>242 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>R</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/thor.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="thorholl11">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Thor
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.0</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>115 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <a href="#" class="movie-item latest-movies">
+                        <img src="/public/images/reviews/deadpool.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="deadholl16">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Deadpool
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>118 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>R</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/kgf.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="kgf1toll18">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                KGF: Chapter 1
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.4</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>154 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/flash.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="flasholl23">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Flash
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>6.7</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>144 mins</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+
+            </div>
+        </div>
+    </div>
+    <!-- End latest movies section -->
+
+
+    <!-- Latest Cartoon Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                Series and Tv Shows
+            </div>
+            <div class="movies-slide carousel-nav-center owl-carousel">
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/loki.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="lokiholl21">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Loki S1
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.2</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>9h 46m</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>TV-14</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/asur.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="asurboll20">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Asur
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.5</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>43m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/daredevil.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="dareanim15">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Daredevil
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.6</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>54m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/defenders.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="defeholl17">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Defenders
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.4</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>54m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/whatif.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="whatanim21">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                What if ?
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.9</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>30m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/family.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="famitoll19">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                The Family Man
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.6</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>45m /ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/kaalapani.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="kalaboll23">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Kaala Paani
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.8</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>40m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End latest movies section -->
+
+    <!-- Latest Series Section -->
+    <div class="section">
+        <div class="container">
+            <div class="section-header">
+                Anime
+            </div>
+            <div class="movies-slide carousel-nav-center owl-carousel">
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/jujutsu.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="jujuanim20">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Jujutsu Kaisen
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.6</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>20m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/naruto.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="naruanim02">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Naruto
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.9</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>20m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/onepeice.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="onepanim99">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                One Piece
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.8</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>25m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>16</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/onepunch.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="onepanim15">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                One Punch Man
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.0</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>19m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>A</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/pokemon.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="pokeanim97">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Pokemon
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>9.0</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>20m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>PG-13</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/spyfam.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="spyfanim22">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Spy Family
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>8.9</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>20m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>R</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+                <!-- MOVIE ITEM -->
+                <div>
+                    <div class="movie-item latest-movies">
+                        <img src="/public/images/reviews/chainsaw.jpg" alt="">
+                        <div class="movie-item-content">
+                            <!-- Sentiment Analysis Results Section -->
+                            <div class="sentiment-analysis-results" data-review-id="chaianim22">
+                                <div class="bar-container">
+                                    <p>Positive: <span class="positiveScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar positiveBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Neutral: <span class="neutralScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar neutralBar"></div>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <p>Negative: <span class="negativeScore">0</span></p>
+                                    <div class="bar-wrapper">
+                                        <div class="bar negativeBar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sentiment Analysis Results Section -->
+                            <div class="movie-item-title">
+                                Chainsaw Man
+                            </div>
+                            <div class="movie-infos">
+                                <div class="movie-info">
+                                    <i class="bx bxs-star"></i>
+                                    <span>7.8</span>
+                                </div>
+                                <div class="movie-info">
+                                    <i class="bx bxs-time"></i>
+                                    <span>25m / ep</span>
+                                </div>
+                                <div class="movie-info">
+                                    <span>R</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- END MOVIE ITEM -->
+
+
+            </div>
+        </div>
+    </div>
+    <!-- End latest movies section -->
+
+    <div class="cta-text">
+        <h1>"And many more"</h1>
+    </div>
+    <p>*These recommended movies are based on the data from IMDb</p>
+    <footer id="footer-container">
+        <div id="left-footer">
+            <h2>Why to choose us ?</h2>
+            <p>"Choose us for a fan theory haven, where imagination thrives, community bonds, and stories come alive
+                through endless exploration."
+            </p>
+        </div>
+        <div id="mid-footer">
+            <h2>Quick Links</h2>
+            <div><a href="">Home</a></div>
+            <div><a href="">Reviews</a></div>
+            <div><a href="">User</a></div>
+        </div>
+        <div id="right-footer">
+            <h2>Contact</h2>
+            <div><i class="fa-solid fa-phone" style="color: #ffffff;"></i> +91 99999 99999</div>
+            <div><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i>fantheories&co</div>
+            <div><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>fantheories_co</div>
+        </div>
+    </footer>
+    <!-- SCRIPT -->
+    <script>
+
+
+    </script>
+    <script>
+        
+        const pathArray = window.location.pathname.split('/');
+        const user_id = pathArray[2]; 
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the current URL
+            const currentURL = window.location.href;
+
+            // Get the div elements
+            const divWithUserId = document.getElementById('divWithUserId');
+            const divWithoutUserId = document.getElementById('divWithoutUserId');
+
+            // Show/hide divs based on the condition
+            if (user_id != 1) {
+                divWithUserId.style.display = 'block';
+                divWithoutUserId.style.display = 'none';
+            } else {
+                divWithUserId.style.display = 'none';
+                divWithoutUserId.style.display = 'block';
+            }
+        });
+        function returnHome() {
+            if (user_id) {
+                // Redirect to homepage.html with user ID
+                window.location.href = `/homepage/${user_id}`;
+            } else {
+                // Redirect to homepage.html without user ID
+                window.location.href = '/';
+            }
+        }
+        
+        fetch(`/profile/${user_id}`)
+            .then(response => response.json())
+            .then(data => {
+                // Update the image source based on the received data
+                const userProfileImageContainer = document.getElementById('userProfileImageContainer');
+                const img = document.createElement('img');
+                img.src = data.photo_url || 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png'; // Use a default image if photo_url is not available
+                img.alt = 'User Profile Image';
+                img.style.width = '50px';
+                img.style.height = '50px';
+                img.style.border='2px solid white';
+                img.style.borderRadius='50%';
+
+                // Append the image to the container
+                userProfileImageContainer.appendChild(img);
+            })
+            .catch(error => console.error('Error fetching user profile data:', error));
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const sentimentAnalysisDivs = document.querySelectorAll('.sentiment-analysis-results');
+
+            sentimentAnalysisDivs.forEach(div => {
+                const reviewId = div.dataset.reviewId;
+
+                fetch(`/api/sentiment-analysis?reviewId=${reviewId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        updateSentimentAnalysisResults(div, data);
+                    })
+                    .catch(error => console.error('Error fetching sentiment analysis data:', error));
+            });
+        });
+
+        function updateSentimentAnalysisResults(div, data) {
+            const positiveScoreElement = div.querySelector('.positiveScore');
+            const neutralScoreElement = div.querySelector('.neutralScore');
+            const negativeScoreElement = div.querySelector('.negativeScore');
+
+            positiveScoreElement.textContent = data.positive_score + '%';
+            neutralScoreElement.textContent = data.neutral_score + '%';
+            negativeScoreElement.textContent = data.negative_score + '%';
+
+            const positiveBarElement = div.querySelector('.positiveBar');
+            const neutralBarElement = div.querySelector('.neutralBar');
+            const negativeBarElement = div.querySelector('.negativeBar');
+
+            positiveBarElement.style.width = data.positive_score + '%';
+            neutralBarElement.style.width = data.neutral_score + '%';
+            negativeBarElement.style.width = data.negative_score + '%';
+        }
+
+        
+
+        // Function to redirect to userprofile.html with user_id
+        function redirectToUserProfile() {
+            if (user_id) {
+                const url = `/userprofile/${user_id}`;
+                console.log('Redirecting to UserProfile:', url);
+                window.location.href = url;
+            }
+        }
+    </script>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- OWL CAROUSEL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+    <!-- APP SCRIPT -->
+    <script>
+        $(document).ready(() => {
+            $('#hamburger-menu').click(() => {
+                $('#hamburger-menu').toggleClass('active')
+                $('#nav-menu').toggleClass('active')
+            })
+
+            // setting owl carousel
+
+            let navText = ["<i class='bx bx-chevron-left'></i>", "<i class='bx bx-chevron-right'></i>"]
+
+            $('#hero-carousel').owlCarousel({
+                items: 1,
+                dots: false,
+                loop: true,
+                nav: true,
+                navText: navText,
+                autoplay: true,
+                autoplayHoverPause: true
+            })
+
+            $('#top-movies-slide').owlCarousel({
+                items: 2,
+                dots: false,
+                loop: true,
+                autoplay: true,
+                autoplayHoverPause: true,
+                responsive: {
+                    500: {
+                        items: 3
+                    },
+                    1280: {
+                        items: 4
+                    },
+                    1600: {
+                        items: 6
+                    }
+                }
+            })
+
+            $('.movies-slide').owlCarousel({
+                items: 2,
+                dots: false,
+                loop: true,
+                autoplay: true,
+                nav: true,
+                navText: navText,
+                margin: 20,
+                responsive: {
+                    500: {
+                        items: 2
+                    },
+                    1280: {
+                        items: 4
+                    },
+                    1600: {
+                        items: 6
+                    }
+                }
+            })
+        })
+    </script>
+
+</body>
+
+</html>
